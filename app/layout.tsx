@@ -2,6 +2,9 @@
 
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -16,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <SessionProvider>
-        <body>{children}</body>
+        <body className={inter.className}>{children}</body>
       </SessionProvider>
     </html>
   );
