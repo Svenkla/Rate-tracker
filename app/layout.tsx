@@ -1,10 +1,5 @@
-"use client";
-
 import "./globals.css";
-import { SessionProvider } from "next-auth/react";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import ClientSessionProvider from "@/components/ClientSessionProvider";
 
 export const metadata = {
   title: "Create Next App",
@@ -16,11 +11,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <SessionProvider>
-        <body className={inter.className}>{children}</body>
-      </SessionProvider>
-    </html>
-  );
+  return <ClientSessionProvider children={children} />;
 }
